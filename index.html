@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -44,136 +44,193 @@
             opacity: 0.9;
         }
 
-        .calendar-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .month-nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .month-nav button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 10px 20px;
+        .info-banner {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 20px 30px;
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s;
         }
 
-        .month-nav button:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-        }
-
-        .current-month {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .calendar {
-            padding: 30px;
-        }
-
-        .weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
+        .info-banner h3 {
+            color: #1976d2;
             margin-bottom: 10px;
         }
 
-        .weekday {
-            text-align: center;
-            font-weight: bold;
-            color: #667eea;
-            padding: 10px;
-            font-size: 0.9em;
+        .info-banner p {
+            color: #555;
+            line-height: 1.6;
         }
 
-        .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
+        .schedule-container {
+            padding: 30px;
         }
 
-        .day {
+        .day-section {
+            margin-bottom: 40px;
             border: 2px solid #e9ecef;
-            border-radius: 12px;
-            padding: 10px;
-            min-height: 120px;
-            background: white;
-            transition: all 0.3s;
-            cursor: pointer;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .day:hover {
+        .day-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-stats {
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+
+        .time-section {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .time-section h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .slots-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .slot-row {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+
+        .slot-row:hover {
             border-color: #667eea;
-            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
         }
 
-        .day.disabled {
-            background: #f8f9fa;
-            cursor: not-allowed;
-            opacity: 0.5;
+        .slot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .day.disabled:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: #e9ecef;
-        }
-
-        .day.other-month {
-            opacity: 0.3;
-        }
-
-        .day.fully-booked {
-            background: #d4edda;
-            border-color: #28a745;
-        }
-
-        .day.partially-booked {
-            background: #fff3cd;
-            border-color: #ffc107;
-        }
-
-        .day-number {
+        .slot-time {
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            color: #333;
+            font-size: 1.2em;
+            color: #667eea;
         }
 
-        .day.disabled .day-number {
-            color: #999;
-        }
-
-        .slots-indicator {
-            font-size: 0.85em;
+        .slot-capacity {
+            background: #e9ecef;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
             color: #666;
         }
 
-        .slots-indicator.has-bookings {
-            color: #667eea;
+        .slot-capacity.full {
+            background: #d4edda;
+            color: #28a745;
+        }
+
+        .slot-capacity.partial {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .people-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .person-card {
+            background: #f8f9ff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .person-info {
+            flex-grow: 1;
+        }
+
+        .person-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.05em;
+        }
+
+        .person-phone {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 3px;
+        }
+
+        .btn-remove {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .btn-remove:hover {
+            background: #c82333;
+            transform: scale(1.05);
+        }
+
+        .empty-slot {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
+
+        .btn-add {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s;
             font-weight: bold;
         }
 
-        .slots-indicator.full {
-            color: #28a745;
-            font-weight: bold;
+        .btn-add:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .btn-add:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .modal {
@@ -197,10 +254,8 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            max-width: 600px;
+            max-width: 500px;
             width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
@@ -220,109 +275,13 @@
             margin-top: 5px;
         }
 
-        .time-slots {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .time-section {
-            margin-bottom: 20px;
-        }
-
-        .time-section h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
-        }
-
-        .slot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-
-        .slot:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
-        }
-
-        .slot.booked {
-            background: #e8f4f8;
-            border-color: #4a9ead;
-        }
-
-        .slot-time {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1em;
-        }
-
-        .slot-info {
-            flex-grow: 1;
-            margin-left: 20px;
-            color: #666;
-        }
-
-        .slot-info.available {
-            color: #28a745;
-            font-style: italic;
-        }
-
-        .slot button {
-            padding: 8px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95em;
-            transition: all 0.3s;
-        }
-
-        .slot button.reserve {
-            background: #667eea;
-            color: white;
-        }
-
-        .slot button.reserve:hover {
-            background: #764ba2;
-            transform: scale(1.05);
-        }
-
-        .slot button.cancel {
-            background: #dc3545;
-            color: white;
-        }
-
-        .slot button.cancel:hover {
-            background: #c82333;
-            transform: scale(1.05);
-        }
-
-        .booking-form {
-            display: none;
-            margin-top: 15px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-
-        .booking-form.active {
-            display: block;
-        }
-
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
             color: #333;
         }
@@ -345,7 +304,7 @@
         .form-buttons {
             display: flex;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .form-buttons button {
@@ -356,6 +315,7 @@
             cursor: pointer;
             font-size: 1em;
             transition: all 0.3s;
+            font-weight: bold;
         }
 
         .btn-confirm {
@@ -367,131 +327,13 @@
             background: #218838;
         }
 
-        .btn-cancel-form {
+        .btn-cancel {
             background: #6c757d;
             color: white;
         }
 
-        .btn-cancel-form:hover {
+        .btn-cancel:hover {
             background: #5a6268;
-        }
-
-        .close-modal {
-            background: #6c757d;
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 20px;
-            width: 100%;
-            transition: all 0.3s;
-        }
-
-        .close-modal:hover {
-            background: #5a6268;
-        }
-
-        .legend {
-            padding: 20px 30px;
-            background: #f8f9fa;
-            border-top: 2px solid #e9ecef;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9em;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-
-        .legend-color.available {
-            background: white;
-            border: 2px solid #e9ecef;
-        }
-
-        .legend-color.partial {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-        }
-
-        .legend-color.full {
-            background: #d4edda;
-            border: 2px solid #28a745;
-        }
-
-        .legend-color.closed {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 20px;
-            color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
-
-            .calendar-controls {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .days {
-                grid-template-columns: repeat(7, 1fr);
-                gap: 5px;
-            }
-
-            .day {
-                min-height: 80px;
-                padding: 5px;
-            }
-
-            .day-number {
-                font-size: 0.9em;
-            }
-
-            .slots-indicator {
-                font-size: 0.7em;
-            }
-
-            .weekday {
-                font-size: 0.75em;
-                padding: 5px;
-            }
-
-            .modal-content {
-                padding: 20px;
-            }
-
-            .slot {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .slot-info {
-                margin-left: 0;
-            }
-
-            .slot button {
-                width: 100%;
-            }
         }
 
         .setup-instructions {
@@ -507,116 +349,117 @@
             margin-bottom: 10px;
         }
 
-        .setup-instructions ol {
-            margin-left: 20px;
-            color: #856404;
+        .setup-instructions input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            margin: 10px 0;
         }
 
-        .setup-instructions li {
-            margin-bottom: 8px;
+        .setup-instructions button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
         }
 
-        .setup-instructions code {
-            background: #f8f9fa;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .day-header {
+                font-size: 1.2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .person-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .btn-remove {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🙏 Turnos de Custodia</h1>
+            <h1>🙏 Turnos de Custodia Semanal</h1>
             <p>Santuario de la Virgen de Schoenstatt - Resistencia</p>
         </div>
 
         <div class="setup-instructions" id="setupInstructions">
             <h3>⚠️ Configuración Necesaria</h3>
-            <ol>
-                <li>Abrí tu Google Sheet y hacé click en <strong>Extensiones → Apps Script</strong></li>
-                <li>Borrá todo el código que aparece y pegá el código que te voy a dar</li>
-                <li>Hacé click en <strong>Implementar → Nueva implementación</strong></li>
-                <li>Elegí tipo: <strong>Aplicación web</strong></li>
-                <li>En "¿Quién tiene acceso?" elegí: <strong>Cualquier persona</strong></li>
-                <li>Copiá la URL que te da y pegala abajo</li>
-            </ol>
-            <div style="margin-top: 15px;">
-                <input type="text" id="scriptUrl" placeholder="Pegá aquí la URL de tu Google Apps Script" 
-                       style="width: 100%; padding: 10px; border: 2px solid #ffc107; border-radius: 5px; margin-bottom: 10px;">
-                <button onclick="saveScriptUrl()" style="width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">
-                    Guardar y Continuar
-                </button>
-            </div>
+            <p style="margin: 10px 0; color: #856404;">Pegá aquí la URL de tu Google Apps Script:</p>
+            <input type="text" id="scriptUrl" placeholder="https://script.google.com/macros/s/.../exec">
+            <button onclick="saveScriptUrl()">Guardar y Continuar</button>
         </div>
 
         <div id="mainContent" style="display: none;">
-            <div class="calendar-controls">
-                <div class="month-nav">
-                    <button onclick="previousMonth()">← Anterior</button>
-                    <div class="current-month" id="currentMonth"></div>
-                    <button onclick="nextMonth()">Siguiente →</button>
-                </div>
+            <div class="info-banner">
+                <h3>ℹ️ ¿Cómo funciona?</h3>
+                <p><strong>Cada persona que se anota asume este horario todas las semanas de febrero.</strong></p>
+                <p>Por ejemplo: Si te anotás en "Martes 09:00-10:00", irás todos los martes a las 9 durante todo el mes. Cada turno puede tener hasta 2 personas.</p>
             </div>
 
-            <div class="calendar">
-                <div class="weekdays">
-                    <div class="weekday">Domingo</div>
-                    <div class="weekday">Lunes</div>
-                    <div class="weekday">Martes</div>
-                    <div class="weekday">Miércoles</div>
-                    <div class="weekday">Jueves</div>
-                    <div class="weekday">Viernes</div>
-                    <div class="weekday">Sábado</div>
-                </div>
-                <div class="days" id="calendarDays"></div>
+            <div class="schedule-container" id="scheduleContainer">
+                <div class="loading">Cargando turnos...</div>
             </div>
 
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-color available"></div>
-                    <span>Disponible</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color partial"></div>
-                    <span>Parcialmente reservado</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color full"></div>
-                    <span>Completo (6/6 turnos)</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color closed"></div>
-                    <span>Cerrado (Lunes)</span>
-                </div>
+            <div class="info-banner" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
+                <h3 style="color: #2e7d32;">💚 Gracias por regalar este tiempo</h3>
+                <p style="color: #1b5e20; font-size: 1.1em;"><strong>Cada hora ofrecida sostiene espiritualmente a muchas personas 🙏</strong></p>
             </div>
         </div>
     </div>
 
-    <div class="modal" id="slotsModal">
+    <div class="modal" id="bookingModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="modalDate"></h2>
-                <p>Seleccioná tu horario de custodia</p>
+                <h2 id="modalTitle">Anotarse en turno</h2>
+                <p id="modalInfo"></p>
             </div>
-            <div id="slotsContainer"></div>
-            <button class="close-modal" onclick="closeModal()">Cerrar</button>
+            <div class="form-group">
+                <label>Nombre completo:</label>
+                <input type="text" id="personName" placeholder="Ej: María González">
+            </div>
+            <div class="form-group">
+                <label>Teléfono:</label>
+                <input type="tel" id="personPhone" placeholder="Ej: 362-4123456">
+            </div>
+            <div class="form-buttons">
+                <button class="btn-confirm" onclick="confirmBooking()">Confirmar</button>
+                <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+            </div>
         </div>
     </div>
 
     <script>
-        let currentDate = new Date(2026, 1, 1); // February 2026
-        const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
-                           'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-
-        // Horarios: Martes a Domingo, 9-12 y 17-20
+        const days = ['Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
         const morningSlots = ['09:00-10:00', '10:00-11:00', '11:00-12:00'];
         const eveningSlots = ['17:00-18:00', '18:00-19:00', '19:00-20:00'];
-        const totalSlots = 6; // Total de turnos por día
+        const maxPerSlot = 2;
 
         let SCRIPT_URL = localStorage.getItem('scriptUrl') || '';
-        let bookingsCache = {};
+        let currentDay = '';
+        let currentSlot = '';
 
         function saveScriptUrl() {
             const url = document.getElementById('scriptUrl').value.trim();
@@ -628,40 +471,12 @@
             SCRIPT_URL = url;
             document.getElementById('setupInstructions').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
-            renderCalendar();
+            loadSchedule();
         }
 
         if (SCRIPT_URL) {
             document.getElementById('setupInstructions').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
-        }
-
-        async function saveBooking(date, time, name, phone) {
-            try {
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        action: 'create',
-                        fecha: date,
-                        horario: time,
-                        nombre: name,
-                        telefono: phone
-                    })
-                });
-                
-                // Con no-cors no podemos leer la respuesta, pero la petición se envió
-                // Esperamos un poco y recargamos
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                bookingsCache = {}; // Limpiar cache
-                return true;
-            } catch (error) {
-                console.error('Error guardando reserva:', error);
-                return false;
-            }
         }
 
         async function getBookings() {
@@ -675,263 +490,205 @@
             }
         }
 
-        async function deleteBooking(date, time) {
+        async function saveBooking(day, time, name, phone) {
             try {
                 const response = await fetch(SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'text/plain',
                     },
                     body: JSON.stringify({
-                        action: 'delete',
-                        fecha: date,
-                        horario: time
+                        action: 'create',
+                        dia: day,
+                        horario: time,
+                        nombre: name,
+                        telefono: phone
                     })
                 });
                 
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                bookingsCache = {};
-                return true;
+                const data = await response.json();
+                return data.status === 'success';
+            } catch (error) {
+                console.error('Error guardando reserva:', error);
+                return false;
+            }
+        }
+
+        async function deleteBooking(day, time, name) {
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                    },
+                    body: JSON.stringify({
+                        action: 'delete',
+                        dia: day,
+                        horario: time,
+                        nombre: name
+                    })
+                });
+                
+                const data = await response.json();
+                return data.status === 'success';
             } catch (error) {
                 console.error('Error eliminando reserva:', error);
                 return false;
             }
         }
 
-        async function getBooking(date, time) {
+        async function loadSchedule() {
             const bookings = await getBookings();
-            return bookings.find(b => b.Fecha === date && b.Horario === time) || null;
-        }
+            let html = '';
 
-        async function getDayBookings(date) {
-            const bookings = await getBookings();
-            return bookings.filter(b => b.Fecha === date).length;
-        }
-
-        function renderCalendar() {
-            const year = currentDate.getFullYear();
-            const month = currentDate.getMonth();
-            
-            document.getElementById('currentMonth').textContent = 
-                `${monthNames[month]} ${year}`;
-
-            const firstDay = new Date(year, month, 1);
-            const lastDay = new Date(year, month + 1, 0);
-            const prevLastDay = new Date(year, month, 0);
-            
-            const firstDayWeek = firstDay.getDay();
-            const lastDate = lastDay.getDate();
-            const prevLastDate = prevLastDay.getDate();
-
-            let days = '';
-
-            // Días del mes anterior
-            for (let i = firstDayWeek - 1; i >= 0; i--) {
-                days += `<div class="day other-month disabled">
-                    <div class="day-number">${prevLastDate - i}</div>
-                </div>`;
-            }
-
-            // Días del mes actual
-            for (let i = 1; i <= lastDate; i++) {
-                const date = new Date(year, month, i);
-                const dayOfWeek = date.getDay();
-                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-                
-                const isClosed = dayOfWeek === 1;
-                const isDisabled = isClosed;
-                
-                days += `<div class="day ${isDisabled ? 'disabled' : ''}" 
-                             onclick="${!isDisabled ? `openDay('${dateStr}', '${dayNames[dayOfWeek]} ${i} de ${monthNames[month]}')` : ''}"
-                             data-date="${dateStr}">
-                    <div class="day-number">${i}</div>
-                    <div class="slots-indicator" id="indicator-${dateStr}">
-                        ${isClosed ? 'Cerrado' : 'Cargando...'}
-                    </div>
-                </div>`;
-            }
-
-            // Días del mes siguiente
-            const remainingDays = 42 - (firstDayWeek + lastDate);
-            for (let i = 1; i <= remainingDays; i++) {
-                days += `<div class="day other-month disabled">
-                    <div class="day-number">${i}</div>
-                </div>`;
-            }
-
-            document.getElementById('calendarDays').innerHTML = days;
-            updateAllIndicators();
-        }
-
-        async function updateAllIndicators() {
-            const days = document.querySelectorAll('.day:not(.disabled):not(.other-month)');
             for (const day of days) {
-                const dateStr = day.getAttribute('data-date');
-                if (dateStr) {
-                    const count = await getDayBookings(dateStr);
-                    const indicator = document.getElementById(`indicator-${dateStr}`);
-                    if (indicator) {
-                        if (count === 0) {
-                            indicator.textContent = 'Disponible';
-                            indicator.classList.remove('has-bookings', 'full');
-                            day.classList.remove('partially-booked', 'fully-booked');
-                        } else if (count < totalSlots) {
-                            indicator.textContent = `${count}/${totalSlots} turnos`;
-                            indicator.classList.add('has-bookings');
-                            indicator.classList.remove('full');
-                            day.classList.add('partially-booked');
-                            day.classList.remove('fully-booked');
-                        } else {
-                            indicator.textContent = `Completo (${count}/${totalSlots})`;
-                            indicator.classList.add('full');
-                            indicator.classList.remove('has-bookings');
-                            day.classList.add('fully-booked');
-                            day.classList.remove('partially-booked');
-                        }
+                const dayBookings = bookings.filter(b => b.Dia === day);
+                const totalBooked = dayBookings.length;
+                const totalSlots = (morningSlots.length + eveningSlots.length) * maxPerSlot;
+                
+                html += `
+                    <div class="day-section">
+                        <div class="day-header">
+                            <span>${day}</span>
+                            <span class="day-stats">${totalBooked}/${totalSlots} lugares ocupados</span>
+                        </div>
+                        
+                        <div class="time-section">
+                            <h3>☀️ Mañana (9:00 - 12:00)</h3>
+                            <div class="slots-grid">
+                                ${renderSlots(day, morningSlots, bookings)}
+                            </div>
+                        </div>
+                        
+                        <div class="time-section" style="border-bottom: none;">
+                            <h3>🌙 Tarde (17:00 - 20:00)</h3>
+                            <div class="slots-grid">
+                                ${renderSlots(day, eveningSlots, bookings)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            document.getElementById('scheduleContainer').innerHTML = html;
+        }
+
+        function renderSlots(day, slots, allBookings) {
+            let html = '';
+            
+            for (const slot of slots) {
+                const slotBookings = allBookings.filter(b => b.Dia === day && b.Horario === slot);
+                const available = maxPerSlot - slotBookings.length;
+                
+                let capacityClass = '';
+                let capacityText = `${slotBookings.length}/${maxPerSlot}`;
+                
+                if (slotBookings.length === maxPerSlot) {
+                    capacityClass = 'full';
+                    capacityText += ' - Completo';
+                } else if (slotBookings.length > 0) {
+                    capacityClass = 'partial';
+                    capacityText += ` - ${available} lugar${available > 1 ? 'es' : ''} libre${available > 1 ? 's' : ''}`;
+                } else {
+                    capacityText = 'Disponible';
+                }
+                
+                html += `
+                    <div class="slot-row">
+                        <div class="slot-header">
+                            <div class="slot-time">${slot}</div>
+                            <div class="slot-capacity ${capacityClass}">${capacityText}</div>
+                        </div>
+                        <div class="people-list">
+                `;
+                
+                if (slotBookings.length === 0) {
+                    html += `<div class="empty-slot">No hay nadie anotado en este turno</div>`;
+                } else {
+                    for (const booking of slotBookings) {
+                        html += `
+                            <div class="person-card">
+                                <div class="person-info">
+                                    <div class="person-name">${booking.Nombre}</div>
+                                    <div class="person-phone">📞 ${booking.Telefono}</div>
+                                </div>
+                                <button class="btn-remove" onclick="removeBooking('${day}', '${slot}', '${booking.Nombre}')">
+                                    Eliminar
+                                </button>
+                            </div>
+                        `;
                     }
                 }
-            }
-        }
-
-        async function openDay(date, displayDate) {
-            document.getElementById('modalDate').textContent = displayDate;
-            
-            let slotsHTML = '<div class="loading">Cargando turnos...</div>';
-            document.getElementById('slotsContainer').innerHTML = slotsHTML;
-            document.getElementById('slotsModal').classList.add('active');
-            
-            slotsHTML = '';
-            slotsHTML += '<div class="time-section"><h3>☀️ Mañana (9:00 - 12:00)</h3>';
-            for (const slot of morningSlots) {
-                slotsHTML += await renderSlot(date, slot);
-            }
-            slotsHTML += '</div>';
-            
-            slotsHTML += '<div class="time-section"><h3>🌙 Tarde (17:00 - 20:00)</h3>';
-            for (const slot of eveningSlots) {
-                slotsHTML += await renderSlot(date, slot);
-            }
-            slotsHTML += '</div>';
-            
-            document.getElementById('slotsContainer').innerHTML = slotsHTML;
-        }
-
-        async function renderSlot(date, time) {
-            const booking = await getBooking(date, time);
-            const slotId = `${date}_${time}`.replace(/[:-]/g, '_');
-            
-            if (booking) {
-                return `
-                    <div class="slot booked" id="slot-${slotId}">
-                        <div class="slot-time">${time}</div>
-                        <div class="slot-info">
-                            <strong>${booking.Nombre}</strong><br>
-                            Tel: ${booking.Telefono}
+                
+                html += `
                         </div>
-                        <button class="cancel" onclick="cancelBooking('${date}', '${time}')">
-                            Cancelar
+                        <button class="btn-add" ${slotBookings.length >= maxPerSlot ? 'disabled' : ''} 
+                                onclick="openBookingModal('${day}', '${slot}')">
+                            ${slotBookings.length >= maxPerSlot ? '✓ Turno Completo' : '+ Anotarse en este turno'}
                         </button>
                     </div>
                 `;
-            } else {
-                return `
-                    <div class="slot" id="slot-${slotId}">
-                        <div class="slot-time">${time}</div>
-                        <div class="slot-info available">Disponible</div>
-                        <button class="reserve" onclick="showBookingForm('${date}', '${time}')">
-                            Reservar
-                        </button>
-                    </div>
-                    <div class="booking-form" id="form-${slotId}">
-                        <div class="form-group">
-                            <label>Nombre completo:</label>
-                            <input type="text" id="name-${slotId}" placeholder="Ej: María González" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Teléfono:</label>
-                            <input type="tel" id="phone-${slotId}" placeholder="Ej: 362-4123456" required>
-                        </div>
-                        <div class="form-buttons">
-                            <button class="btn-confirm" onclick="confirmBooking('${date}', '${time}')">
-                                Confirmar Reserva
-                            </button>
-                            <button class="btn-cancel-form" onclick="hideBookingForm('${date}', '${time}')">
-                                Cancelar
-                            </button>
-                        </div>
-                    </div>
-                `;
             }
+            
+            return html;
         }
 
-        function showBookingForm(date, time) {
-            const slotId = `${date}_${time}`.replace(/[:-]/g, '_');
-            document.getElementById(`form-${slotId}`).classList.add('active');
+        function openBookingModal(day, slot) {
+            currentDay = day;
+            currentSlot = slot;
+            document.getElementById('modalTitle').textContent = `Anotarse en ${day}`;
+            document.getElementById('modalInfo').textContent = `Horario: ${slot} - Todos los ${day.toLowerCase()}`;
+            document.getElementById('personName').value = '';
+            document.getElementById('personPhone').value = '';
+            document.getElementById('bookingModal').classList.add('active');
+            document.getElementById('personName').focus();
         }
 
-        function hideBookingForm(date, time) {
-            const slotId = `${date}_${time}`.replace(/[:-]/g, '_');
-            document.getElementById(`form-${slotId}`).classList.remove('active');
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('active');
         }
 
-        async function confirmBooking(date, time) {
-            const slotId = `${date}_${time}`.replace(/[:-]/g, '_');
-            const name = document.getElementById(`name-${slotId}`).value.trim();
-            const phone = document.getElementById(`phone-${slotId}`).value.trim();
+        async function confirmBooking() {
+            const name = document.getElementById('personName').value.trim();
+            const phone = document.getElementById('personPhone').value.trim();
             
             if (!name || !phone) {
                 alert('Por favor completá todos los campos');
                 return;
             }
             
-            const success = await saveBooking(date, time, name, phone);
+            const success = await saveBooking(currentDay, currentSlot, name, phone);
             
             if (success) {
-                alert('¡Turno reservado con éxito! Gracias por tu compromiso con la custodia del Santuario.');
-                await openDay(date, document.getElementById('modalDate').textContent);
-                await updateAllIndicators();
+                alert(`¡Listo! ${name} quedó inscripto para todos los ${currentDay} de ${currentSlot}.\n\n¡Gracias por tu compromiso con la custodia del Santuario!`);
+                closeModal();
+                await loadSchedule();
             } else {
-                alert('Hubo un error al guardar la reserva. Por favor intentá nuevamente.');
+                alert('Hubo un error al guardar. Por favor intentá nuevamente.');
             }
         }
 
-        async function cancelBooking(date, time) {
-            if (confirm('¿Estás seguro que querés cancelar este turno?')) {
-                const success = await deleteBooking(date, time);
+        async function removeBooking(day, slot, name) {
+            if (confirm(`¿Estás seguro que querés eliminar a ${name} del turno de ${day} ${slot}?`)) {
+                const success = await deleteBooking(day, slot, name);
                 
                 if (success) {
-                    alert('Turno cancelado correctamente');
-                    await openDay(date, document.getElementById('modalDate').textContent);
-                    await updateAllIndicators();
+                    alert('Turno eliminado correctamente');
+                    await loadSchedule();
                 } else {
-                    alert('Hubo un error al cancelar. Por favor intentá nuevamente.');
+                    alert('Hubo un error al eliminar. Por favor intentá nuevamente.');
                 }
             }
         }
 
-        function closeModal() {
-            document.getElementById('slotsModal').classList.remove('active');
-        }
-
-        function previousMonth() {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        }
-
-        function nextMonth() {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        }
-
-        document.getElementById('slotsModal').addEventListener('click', function(e) {
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
         if (SCRIPT_URL) {
-            renderCalendar();
+            loadSchedule();
         }
     </script>
 </body>
